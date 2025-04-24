@@ -3,178 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="배움과 익힘, 가르침이 즐거운 마라토너 임정훈(데미안)의 사용설명서입니다.">
     <title>데미안 - 사용설명서</title>
     <link rel="stylesheet" href="style.css">
+    <!-- 파비콘 추가 -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- 소셜 미디어 메타 태그 -->
+    <meta property="og:title" content="데미안 사용설명서">
+    <meta property="og:description" content="배움과 익힘, 가르침이 즐거운 마라토너 임정훈(데미안)의 사용설명서">
+    <meta property="og:image" content="demian-photos.jpg">
+    <meta property="og:url" content="https://demian-manual.com">
 </head>
 <body>
+    <!-- 건너뛰기 링크 추가 (접근성) -->
+    <a href="#main-content" class="skip-link">본문으로 바로가기</a>
+    
     <!-- 고정형 네비게이션 바 -->
-    <div class="nav-container">
-        <div class="nav-wrapper">
-            <div class="nav-brand">Demian</div>
-            <button class="mobile-toggle">≡</button>
-            <div class="nav-menu">
-                <a href="#overview" class="nav-item">개요</a>
-                <a href="#specs" class="nav-item">사양</a>
-                <a href="#time" class="nav-item">사용 시간</a>
-                <a href="#daily" class="nav-item">활용 가이드</a>
-                <a href="#energy" class="nav-item">에너지 관리</a>
-                <a href="#values" class="nav-item">핵심 가치</a>
-                <a href="#system" class="nav-item">운영 시스템</a>
-                <a href="#features" class="nav-item">고급 기능</a>
-                <a href="#troubleshoot" class="nav-item">문제 해결</a>
-                <a href="#upgrade" class="nav-item">업그레이드</a>
+    <header>
+        <nav class="nav-container" role="navigation" aria-label="주메뉴">
+            <div class="nav-wrapper">
+                <div class="nav-brand">Demian</div>
+                <button class="mobile-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="메뉴 열기">
+                    <span class="sr-only">메뉴</span>
+                    <span aria-hidden="true">≡</span>
+                </button>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#overview" class="nav-item">개요</a>
+                    <a href="#specs" class="nav-item">사양</a>
+                    <a href="#time" class="nav-item">사용 시간</a>
+                    <a href="#daily" class="nav-item">활용 가이드</a>
+                    <a href="#energy" class="nav-item">에너지 관리</a>
+                    <a href="#values" class="nav-item">핵심 가치</a>
+                    <a href="#system" class="nav-item">운영 시스템</a>
+                    <a href="#features" class="nav-item">고급 기능</a>
+                    <a href="#troubleshoot" class="nav-item">문제 해결</a>
+                    <a href="#upgrade" class="nav-item">업그레이드</a>
+                    <a href="#contact" class="nav-item nav-item-highlight">연락하기</a>
+                </div>
             </div>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="container">
+    <main id="main-content" class="container">
         <div class="header">
-            <div class="model-badge">2025 Edition</div>
+            <div class="model-badge" aria-label="2025년 버전">2025 Edition</div>
             <h1>데미안 사용설명서</h1>
             <p>배움과 익힘, 가르침이 즐거운 마라토너</p>
         </div>
         
         <div class="hero-image-container animate-on-scroll">
-            <img src="demian-photos.jpg" alt="데미안의 다양한 모습" class="hero-image">
+            <img src="demian-photos.jpg" alt="데미안의 다양한 모습 - 러닝, 교육, 코칭 활동 장면 모음" class="hero-image">
             <div class="hero-caption">배움과 익힘, 가르침이 즐거운 마라토너</div>
         </div>
         
-        <section id="overview" class="animate-on-scroll">
-            <h2>제품 개요</h2>
+        <section id="overview" class="animate-on-scroll" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">제품 개요</h2>
             <table class="spec-table">
-                <tr>
-                    <th>모델명</th>
-                    <td>임정훈 (Demian)</td>
-                </tr>
-                <tr>
-                    <th>출시 시기</th>
-                    <td>1980년대</td>
-                </tr>
-                <tr>
-                    <th>제품 구분</th>
-                    <td>배움과 익힘, 가르침이 즐거운 마라토너</td>
-                </tr>
-                <tr>
-                    <th>주요 기능</th>
-                    <td>AI & 디지털 & HRD 현업실무자, 러너, 코치, 퍼실리테이터</td>
-                </tr>
+                <caption class="sr-only">데미안 제품 개요 정보</caption>
+                <tbody>
+                    <tr>
+                        <th scope="row">모델명</th>
+                        <td>임정훈 (Demian)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">출시 시기</th>
+                        <td>1980년대</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">제품 구분</th>
+                        <td>배움과 익힘, 가르침이 즐거운 마라토너</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">주요 기능</th>
+                        <td>AI & 디지털 & HRD 현업실무자, 러너, 코치, 퍼실리테이터</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
         
-        <section id="specs" class="animate-on-scroll">
-            <h2>제품 사양</h2>
+        <section id="specs" class="animate-on-scroll" aria-labelledby="specs-heading">
+            <h2 id="specs-heading">제품 사양</h2>
             <table class="spec-table">
-                <tr>
-                    <th>운영체제</th>
-                    <td>15년 경력의 현직 기업 HRD 담당자</td>
-                </tr>
-                <tr>
-                    <th>프로세서</th>
-                    <td>희림종합건축사사무소 인사팀 팀장 (교육담당자)</td>
-                </tr>
-                <tr>
-                    <th>메모리</th>
-                    <td>1,400명 대상 교육체계 수립 및 사람과 기술 연결 교육 디자인</td>
-                </tr>
-                <tr>
-                    <th>배터리</th>
-                    <td>
-                        마라톤으로 충전, 휴식으로 최적화
-                        <div class="battery-indicator">
-                            <div class="battery-level" style="width: 4%;"></div>
-                            <div class="battery-text">4%</div>
-                        </div>
-                        <div class="warning">배터리 부족! 충전(휴식) 시간을 늘리는 것을 권장합니다.</div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>연결 기능</th>
-                    <td>다양한 커뮤니티 퍼실리테이션, 코칭, Guide Run Project</td>
-                </tr>
+                <caption class="sr-only">데미안 제품 사양 상세 정보</caption>
+                <tbody>
+                    <tr>
+                        <th scope="row">운영체제</th>
+                        <td>15년 경력의 현직 기업 HRD 담당자</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">프로세서</th>
+                        <td>희림종합건축사사무소 인사팀 팀장 (교육담당자)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">메모리</th>
+                        <td>1,400명 대상 교육체계 수립 및 사람과 기술 연결 교육 디자인</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">배터리</th>
+                        <td>
+                            마라톤으로 충전, 휴식으로 최적화
+                            <div class="battery-indicator" aria-label="배터리 충전 상태 4%">
+                                <div class="battery-level" style="width: 4%;" aria-hidden="true"></div>
+                                <div class="battery-text" aria-hidden="true">4%</div>
+                            </div>
+                            <div class="warning" role="alert">
+                                <span>배터리 부족! 충전(휴식) 시간을 늘리는 것을 권장합니다.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">연결 기능</th>
+                        <td>다양한 커뮤니티 퍼실리테이션, 코칭, Guide Run Project</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
         
-        <section id="time" class="animate-on-scroll">
-            <h2>최적 사용 시간대</h2>
-            <table class="time-table">
-                <tr>
-                    <th>시간대</th>
-                    <th>Personal</th>
-                    <th>Study</th>
-                    <th>Athletics</th>
-                    <th>Exhibition</th>
-                    <th>Concert</th>
-                    <th>Heerim</th>
-                </tr>
-                <tr>
-                    <td>오전(06-12)</td>
-                    <td>15%</td>
-                    <td>25%</td>
-                    <td class="high">65%</td>
-                    <td>10%</td>
-                    <td>0%</td>
-                    <td>0%</td>
-                </tr>
-                <tr>
-                    <td>오후(12-18)</td>
-                    <td>20%</td>
-                    <td>15%</td>
-                    <td>10%</td>
-                    <td class="high">70%</td>
-                    <td>20%</td>
-                    <td>0%</td>
-                </tr>
-                <tr>
-                    <td>저녁(18-24)</td>
-                    <td class="high">65%</td>
-                    <td class="high">60%</td>
-                    <td>25%</td>
-                    <td>20%</td>
-                    <td class="high">80%</td>
-                    <td class="high">100%</td>
-                </tr>
-            </table>
+        <section id="time" class="animate-on-scroll" aria-labelledby="time-heading">
+            <h2 id="time-heading">최적 사용 시간대</h2>
+            <div class="table-responsive">
+                <table class="time-table">
+                    <caption class="sr-only">시간대별 활동 효율성 표</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">시간대</th>
+                            <th scope="col">Personal</th>
+                            <th scope="col">Study</th>
+                            <th scope="col">Athletics</th>
+                            <th scope="col">Exhibition</th>
+                            <th scope="col">Concert</th>
+                            <th scope="col">Heerim</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>오전(06-12)</td>
+                            <td>15%</td>
+                            <td>25%</td>
+                            <td class="high">65%</td>
+                            <td>10%</td>
+                            <td>0%</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td>오후(12-18)</td>
+                            <td>20%</td>
+                            <td>15%</td>
+                            <td>10%</td>
+                            <td class="high">70%</td>
+                            <td>20%</td>
+                            <td>0%</td>
+                        </tr>
+                        <tr>
+                            <td>저녁(18-24)</td>
+                            <td class="high">65%</td>
+                            <td class="high">60%</td>
+                            <td>25%</td>
+                            <td>20%</td>
+                            <td class="high">80%</td>
+                            <td class="high">100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
-            <div class="warning">
-                데미안을 오전에 러닝 모드로 사용할 경우, 다음 모드 전환을 위해 최소 30분의 휴식이 필요합니다.
+            <div class="warning" role="alert">
+                <span>데미안을 오전에 러닝 모드로 사용할 경우, 다음 모드 전환을 위해 최소 30분의 휴식이 필요합니다.</span>
             </div>
         </section>
         
-        <section id="daily" class="animate-on-scroll">
-            <h2>요일별 활용 가이드</h2>
-            <div class="features">
+        <section id="daily" class="animate-on-scroll" aria-labelledby="daily-heading">
+            <h2 id="daily-heading">요일별 활용 가이드</h2>
+            <div class="features" aria-label="요일별 활용 정보">
                 <div class="feature-card">
-                    <div class="feature-icon">S</div>
+                    <div class="feature-icon" aria-hidden="true">S</div>
                     <div class="feature-title">일요일 (24%)</div>
                     <p>Athletics 기능 최고조 - 러닝, 마라톤</p>
                     <p><strong>팁:</strong> 이 날 "달리기 좋은 날"이라고 말하면 자동으로 러닝 모드가 활성화됩니다.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">M</div>
+                    <div class="feature-icon" aria-hidden="true">M</div>
                     <div class="feature-title">월요일 (13%)</div>
                     <p>Study, Heerim 모드 활성화</p>
                     <p><strong>팁:</strong> 주간 업무 시작에 최적화된 HRD 고급 기능을 사용할 수 있습니다.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">T</div>
+                    <div class="feature-icon" aria-hidden="true">T</div>
                     <div class="feature-title">목요일 (16%)</div>
                     <p>Personal 모드 집중 - 미팅, 네트워킹</p>
                     <p><strong>팁:</strong> 목요일은 주간 업무 마무리 미팅에 최적화되어 있습니다.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">F</div>
+                    <div class="feature-icon" aria-hidden="true">F</div>
                     <div class="feature-title">금요일 (13%)</div>
                     <p>Concert 모드 - 문화 활동</p>
                     <p><strong>팁:</strong> 이 모드에서는 감성 센서가 활성화됩니다.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">S</div>
+                    <div class="feature-icon" aria-hidden="true">S</div>
                     <div class="feature-title">토요일 (16%)</div>
                     <p>Study, Wedding 모드 - 토요심리학회 등</p>
                     <p><strong>팁:</strong> 토요일은 학습 기능이 35% 향상됩니다.</p>
                 </div>
                 <div class="feature-card pulse-effect">
-                    <div class="feature-icon">T/W</div>
+                    <div class="feature-icon" aria-hidden="true">T/W</div>
                     <div class="feature-title">화/수요일 (18%)</div>
                     <p>시스템 업데이트 및 재정비 시간</p>
                     <p><strong>개선 제안:</strong> 이 시간대를 더 효율적으로 활용할 수 있는 펌웨어 업데이트가 필요합니다.</p>
@@ -182,137 +214,213 @@
             </div>
         </section>
         
-        <section id="energy" class="animate-on-scroll">
-            <h2>에너지 관리 시스템</h2>
-            <div class="features">
+        <section id="energy" class="animate-on-scroll" aria-labelledby="energy-heading">
+            <h2 id="energy-heading">에너지 관리 시스템</h2>
+            <div class="features" aria-label="에너지 유형별 관리 정보">
                 <div class="feature-card">
-                    <div class="feature-icon">B</div>
+                    <div class="feature-icon" aria-hidden="true">B</div>
                     <div class="feature-title">신체적 에너지</div>
                     <p>오전 러닝으로 활성화</p>
                     <p>Athletics 20%의 비중으로 유지</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">S</div>
+                    <div class="feature-icon" aria-hidden="true">S</div>
                     <div class="feature-title">사회적 에너지</div>
                     <p>오후 시간대 네트워킹으로 충전</p>
                     <p>Personal 32%, Wedding 6%의 비중</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">C</div>
+                    <div class="feature-icon" aria-hidden="true">C</div>
                     <div class="feature-title">인지적 에너지</div>
                     <p>저녁 시간 학습과 업무로 최적화</p>
                     <p>Study 22%, Heerim 4%의 비중</p>
                 </div>
                 <div class="feature-card pulse-effect">
-                    <div class="feature-icon">R</div>
+                    <div class="feature-icon" aria-hidden="true">R</div>
                     <div class="feature-title">에너지 재충전</div>
                     <p>Rest Day 4% (불충분)</p>
                     <p class="battery-warning">에너지 재충전 빈도 증가 필요!</p>
                 </div>
             </div>
+            
+            <!-- 새로 추가된 차트 시각화 -->
+            <div class="energy-chart-container">
+                <h3>에너지 분배 차트</h3>
+                <div class="energy-chart" id="energyChart" aria-label="에너지 분배 현황 차트">
+                    <!-- JavaScript로 차트 생성 -->
+                </div>
+            </div>
         </section>
         
-        <section id="values" class="animate-on-scroll">
-            <h2>핵심 가치 엔진</h2>
-            <div class="features">
+        <section id="values" class="animate-on-scroll" aria-labelledby="values-heading">
+            <h2 id="values-heading">핵심 가치 엔진</h2>
+            <div class="features" aria-label="데미안의 핵심 가치">
                 <div class="feature-card">
-                    <div class="feature-icon">L</div>
+                    <div class="feature-icon" aria-hidden="true">L</div>
                     <div class="feature-title">지속적 학습</div>
                     <p>월 10회 이상 스터디와 세미나 참여로 구동</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">C</div>
+                    <div class="feature-icon" aria-hidden="true">C</div>
                     <div class="feature-title">사회적 연결</div>
                     <p>Personal, Wedding, Guide Run 활동으로 유지</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">H</div>
+                    <div class="feature-icon" aria-hidden="true">H</div>
                     <div class="feature-title">신체적 건강</div>
                     <p>Athletics, 마라톤으로 최적화</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">P</div>
+                    <div class="feature-icon" aria-hidden="true">P</div>
                     <div class="feature-title">전문성 개발</div>
                     <p>Heerim, 교육활동으로 강화</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">S</div>
+                    <div class="feature-icon" aria-hidden="true">S</div>
                     <div class="feature-title">사회적 기여</div>
                     <p>Guide Run, 가이드런으로 확장</p>
                 </div>
+                
+                <!-- 새로 추가된 핵심 가치 비교 -->
+                <div class="feature-card feature-card-large">
+                    <div class="feature-title">가치 간 시너지</div>
+                    <div class="value-synergy-chart" id="valueSynergyChart" aria-label="핵심 가치 간 시너지 관계도">
+                        <!-- JavaScript로 시너지 차트 생성 -->
+                    </div>
+                </div>
             </div>
         </section>
         
-        <section id="system" class="animate-on-scroll">
-            <h2>통합 운영 시스템</h2>
-            <div class="system-box">
+        <section id="system" class="animate-on-scroll" aria-labelledby="system-heading">
+            <h2 id="system-heading">통합 운영 시스템</h2>
+            <div class="system-box" aria-label="데미안의 핵심 운영 시스템">
                 "배움(Study)과 익힘(Athletics), 가르침(Personal/Heerim)"의 순환적 패턴으로 작동
             </div>
-        </section>
-        
-        <section id="features" class="animate-on-scroll">
-            <h2>고급 기능</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">A</div>
-                    <div class="feature-title">AI 기반 러닝 코칭</div>
-                    <p>운동과 기술의 통합적 접근</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">D</div>
-                    <div class="feature-title">디지털 시대 인적자원개발</div>
-                    <p>현대적 교육 방법론 설계</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">G</div>
-                    <div class="feature-title">가이드런 프로젝트</div>
-                    <p>시각장애인 러닝 지원 프로그램</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">S</div>
-                    <div class="feature-title">스포츠의학 & HRD 통합</div>
-                    <p>신체-인지 역량 개발</p>
+            
+            <!-- 새로 추가된 순환 다이어그램 -->
+            <div class="system-diagram">
+                <div class="diagram-title">운영 시스템 다이어그램</div>
+                <div class="diagram-container" id="systemDiagram" aria-label="배움, 익힘, 가르침의 순환 다이어그램">
+                    <!-- JavaScript로 다이어그램 생성 -->
                 </div>
             </div>
         </section>
         
-        <section id="troubleshoot" class="animate-on-scroll">
-            <h2>문제 해결 가이드</h2>
-            <table class="spec-table">
-                <tr>
-                    <th>에러 메시지</th>
-                    <td>화/수요일 활용도 낮음 → 개선 필요</td>
-                </tr>
-                <tr>
-                    <th>시스템 과부하</th>
-                    <td>Rest Day 4% 불충분 → 휴식 시간 확보 필요</td>
-                </tr>
-                <tr>
-                    <th>성능 최적화</th>
-                    <td>월별 활동의 균등한 분배로 안정적 운영 권장</td>
-                </tr>
-            </table>
+        <section id="features" class="animate-on-scroll" aria-labelledby="features-heading">
+            <h2 id="features-heading">고급 기능</h2>
+            <div class="features" aria-label="데미안의 고급 기능">
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">A</div>
+                    <div class="feature-title">AI 기반 러닝 코칭</div>
+                    <p>운동과 기술의 통합적 접근</p>
+                    <button class="feature-details-btn" aria-expanded="false" aria-controls="ai-details">자세히 보기</button>
+                    <div class="feature-details" id="ai-details">
+                        <p>인공지능 기술을 활용한 러닝 데이터 분석 및 개인화된 코칭 제공</p>
+                        <p>실시간 피드백과 장기적 발전 계획 설계 가능</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">D</div>
+                    <div class="feature-title">디지털 시대 인적자원개발</div>
+                    <p>현대적 교육 방법론 설계</p>
+                    <button class="feature-details-btn" aria-expanded="false" aria-controls="digital-details">자세히 보기</button>
+                    <div class="feature-details" id="digital-details">
+                        <p>디지털 트랜스포메이션 시대의 HRD 전략 수립 및 실행</p>
+                        <p>하이브리드 학습 환경에 최적화된 교육 프로그램 개발</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">G</div>
+                    <div class="feature-title">가이드런 프로젝트</div>
+                    <p>시각장애인 러닝 지원 프로그램</p>
+                    <button class="feature-details-btn" aria-expanded="false" aria-controls="guide-details">자세히 보기</button>
+                    <div class="feature-details" id="guide-details">
+                        <p>시각장애인과 함께하는 러닝 활동을 통한 사회 통합</p>
+                        <p>전문 가이드 러너 교육 및 커뮤니티 구축</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">S</div>
+                    <div class="feature-title">스포츠의학 & HRD 통합</div>
+                    <p>신체-인지 역량 개발</p>
+                    <button class="feature-details-btn" aria-expanded="false" aria-controls="sports-details">자세히 보기</button>
+                    <div class="feature-details" id="sports-details">
+                        <p>신체 활동과 인지 발달의 연관성 연구 및 적용</p>
+                        <p>기업 교육에 운동 기반 학습 방법론 도입</p>
+                    </div>
+                </div>
+            </div>
         </section>
         
-        <section id="upgrade" class="animate-on-scroll">
-            <h2>업그레이드 계획</h2>
+        <section id="troubleshoot" class="animate-on-scroll" aria-labelledby="troubleshoot-heading">
+            <h2 id="troubleshoot-heading">문제 해결 가이드</h2>
+            <table class="spec-table">
+                <caption class="sr-only">문제 상황별 해결 방안</caption>
+                <tbody>
+                    <tr>
+                        <th scope="row">에러 메시지</th>
+                        <td>화/수요일 활용도 낮음 → 개선 필요</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">시스템 과부하</th>
+                        <td>Rest Day 4% 불충분 → 휴식 시간 확보 필요</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">성능 최적화</th>
+                        <td>월별 활동의 균등한 분배로 안정적 운영 권장</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- 새로 추가된 FAQ -->
+            <div class="faq-section">
+                <h3>자주 묻는 질문</h3>
+                <details class="faq-item">
+                    <summary>배터리가 너무 빨리 소진됩니다. 어떻게 해야 하나요?</summary>
+                    <div class="faq-content">
+                        <p>Rest Day를 주 1회 이상 확보하고, 매일 7시간 이상의 수면을 취하는 것이 권장됩니다. 또한 마라톤 이후에는 48시간 이상의 회복 시간이 필요합니다.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>최적의 업무 효율성을 위한 추천 시간대는?</summary>
+                    <div class="faq-content">
+                        <p>저녁(18-24시) 시간대에 집중력이 가장 높아 교육 콘텐츠 개발과 HRD 기획 업무에 최적화되어 있습니다. 창의적 사고가 필요한 작업은 이 시간대에 진행하는 것이 좋습니다.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>모드 전환 시 발생하는 지연 현상을 줄이려면?</summary>
+                    <div class="faq-content">
+                        <p>모드 전환 간에 최소 30분의 버퍼 시간을 두고, 전환 전후에 가벼운 스트레칭과 명상을 실행하면 시스템 안정화에 도움이 됩니다.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        
+        <section id="upgrade" class="animate-on-scroll" aria-labelledby="upgrade-heading">
+            <h2 id="upgrade-heading">업그레이드 계획</h2>
             <div class="upgrade-plan">
                 <div class="upgrade-title">2025 업그레이드 계획</div>
+                <div class="upgrade-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 25%;" aria-label="진행률 25%"></div>
+                    </div>
+                    <div class="progress-text">진행률: 25%</div>
+                </div>
                 <div class="upgrade-items">
                     <div class="upgrade-item">
-                        <div class="upgrade-dot"></div>
+                        <div class="upgrade-dot" aria-hidden="true"></div>
                         <div>신체-인지 역량 통합 프로젝트</div>
                     </div>
                     <div class="upgrade-item">
-                        <div class="upgrade-dot"></div>
+                        <div class="upgrade-dot" aria-hidden="true"></div>
                         <div>스포츠의학 기반 역량 확장</div>
                     </div>
                     <div class="upgrade-item">
-                        <div class="upgrade-dot"></div>
+                        <div class="upgrade-dot" aria-hidden="true"></div>
                         <div>운동 기반 인지 향상 연구</div>
                     </div>
                     <div class="upgrade-item">
-                        <div class="upgrade-dot"></div>
+                        <div class="upgrade-dot" aria-hidden="true"></div>
                         <div>심리신경면역학 기반 회복</div>
                     </div>
                 </div>
@@ -327,40 +435,152 @@
             </div>
         </section>
         
-        <section id="synergy" class="animate-on-scroll">
-            <h2>시너지 호환성</h2>
+        <section id="synergy" class="animate-on-scroll" aria-labelledby="synergy-heading">
+            <h2 id="synergy-heading">시너지 호환성</h2>
             <p>데미안 제품은 다음 영역과의 탁월한 시너지를 발휘합니다:</p>
-            <div class="compatibility">
+            <div class="compatibility" aria-label="데미안의 주요 호환 분야">
                 <div class="compatibility-item">
-                    <div class="compatibility-icon">H</div>
+                    <div class="compatibility-icon" aria-hidden="true">H</div>
                     <p>HRD & 기업교육</p>
                 </div>
                 <div class="compatibility-item">
-                    <div class="compatibility-icon">R</div>
+                    <div class="compatibility-icon" aria-hidden="true">R</div>
                     <p>마라톤 & 러닝</p>
                 </div>
                 <div class="compatibility-item">
-                    <div class="compatibility-icon">A</div>
+                    <div class="compatibility-icon" aria-hidden="true">A</div>
                     <p>AI & 디지털</p>
                 </div>
                 <div class="compatibility-item">
-                    <div class="compatibility-icon">C</div>
+                    <div class="compatibility-icon" aria-hidden="true">C</div>
                     <p>코칭 & 퍼실리테이션</p>
                 </div>
                 <div class="compatibility-item">
-                    <div class="compatibility-icon">S</div>
+                    <div class="compatibility-icon" aria-hidden="true">S</div>
                     <p>학습 & 세미나</p>
                 </div>
             </div>
         </section>
         
-        <div class="footer">
+        <!-- 새로 추가된 연락처 섹션 -->
+        <section id="contact" class="animate-on-scroll" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">연락하기</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>데미안에게 문의하기</h3>
+                    <p>교육, 러닝, 코칭 관련 문의는 아래 연락처로 보내주세요:</p>
+                    <ul class="contact-list">
+                        <li>
+                            <span class="contact-icon" aria-hidden="true">✉</span>
+                            <span>이메일: contact@demian.com</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon" aria-hidden="true">📞</span>
+                            <span>전화: 010-1234-5678</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon" aria-hidden="true">💬</span>
+                            <span>소셜미디어: @demian_runner</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h3>빠른 문의하기</h3>
+                    <form class="contact-form" action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">이름</label>
+                            <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">주제</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>문의 주제를 선택하세요</option>
+                                <option value="hrd">HRD & 기업교육</option>
+                                <option value="running">러닝 & 마라톤</option>
+                                <option value="coaching">코칭 & 퍼실리테이션</option>
+                                <option value="guiderun">가이드런 프로젝트</option>
+                                <option value="other">기타</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">메시지</label>
+                            <textarea id="message" name="message" placeholder="문의 내용을 입력하세요" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="submit-btn">문의하기</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 새로 추가된 뉴스레터 구독 섹션 -->
+        <section id="newsletter" class="animate-on-scroll" aria-labelledby="newsletter-heading">
+            <h2 id="newsletter-heading">데미안 업데이트 구독</h2>
+            <div class="newsletter-container">
+                <p>데미안의 최신 활동과 인사이트를 정기적으로 받아보세요.</p>
+                <form class="newsletter-form" action="#" method="post">
+                    <input type="email" name="subscribe-email" placeholder="이메일 주소를 입력하세요" required>
+                    <button type="submit">구독하기</button>
+                </form>
+                <p class="newsletter-disclaimer">구독은 언제든지 취소할 수 있습니다. 개인정보는 안전하게 보호됩니다.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>데미안 소개</h3>
+                <p>배움과 익힘, 가르침이 즐거운 마라토너</p>
+                <p>교육, 러닝, 코칭을 통해 사람과 사람을 연결합니다.</p>
+            </div>
+            <div class="footer-section">
+                <h3>바로가기</h3>
+                <ul class="footer-links">
+                    <li><a href="#overview">제품 개요</a></li>
+                    <li><a href="#energy">에너지 관리</a></li>
+                    <li><a href="#features">고급 기능</a></li>
+                    <li><a href="#contact">연락하기</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>소셜미디어</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="인스타그램"><span aria-hidden="true">📷</span></a>
+                    <a href="#" aria-label="트위터"><span aria-hidden="true">🐦</span></a>
+                    <a href="#" aria-label="링크드인"><span aria-hidden="true">💼</span></a>
+                    <a href="#" aria-label="유튜브"><span aria-hidden="true">🎬</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>본 사용설명서는 구글 캘린더, 자저전, AI 프로필을 바탕으로 작성되었습니다.</p>
             <p class="disclaimer">모든 활동이 기록되지 않았으므로 실제 성능은 더 우수할 수 있습니다.</p>
             <p>© 2025 데미안 에디션 - 배움과 익힘, 가르침이 즐겁게</p>
         </div>
+    </footer>
+    
+    <!-- 스크롤 위로 버튼 -->
+    <button class="scroll-top" aria-label="페이지 상단으로 이동">
+        <span aria-hidden="true">↑</span>
+    </button>
+    
+    <!-- 쿠키 동의 배너 -->
+    <div class="cookie-banner" id="cookieBanner" role="alert" aria-live="polite">
+        <p>이 웹사이트는 사용자 경험 향상을 위해 쿠키를 사용합니다.</p>
+        <div class="cookie-buttons">
+            <button id="acceptCookies" class="cookie-btn cookie-accept">동의</button>
+            <button id="rejectCookies" class="cookie-btn cookie-reject">거부</button>
+        </div>
     </div>
     
+    <!-- JavaScript 파일 -->
     <script src="script.js"></script>
 </body>
 </html>
