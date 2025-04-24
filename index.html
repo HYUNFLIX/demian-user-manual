@@ -4,334 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>데미안 사용설명서</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
-        
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.4;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 10px;
-        }
-        
-        .header {
-            text-align: center;
-            padding: 15px 0;
-            border-bottom: 2px solid #f0f0f0;
-            position: relative;
-        }
-        
-        .model-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #ff5722;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            transform: rotate(10deg);
-        }
-        
-        .hero-image-container {
-            width: 100%;
-            margin: 15px 0;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .hero-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0,0,0,0.6);
-            color: white;
-            padding: 8px;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 8px;
-            color: #2196F3;
-        }
-        
-        h2 {
-            font-size: 1.6em;
-            color: #FF5722;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 8px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        
-        h3 {
-            font-size: 1.2em;
-            color: #4CAF50;
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-        
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        
-        .spec-table th {
-            background-color: #f0f0f0;
-            text-align: left;
-            padding: 10px;
-        }
-        
-        .spec-table td {
-            padding: 10px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .warning {
-            background-color: #FFF3E0;
-            border-left: 4px solid #FF9800;
-            padding: 8px 12px;
-            margin: 12px 0;
-            border-radius: 4px;
-        }
-        
-        .battery-indicator {
-            width: 100%;
-            height: 25px;
-            background-color: #f0f0f0;
-            border-radius: 15px;
-            margin: 12px 0;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .battery-level {
-            height: 100%;
-            background-color: #4CAF50;
-            border-radius: 15px;
-            transition: width 1s ease-in-out;
-        }
-        
-        .battery-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .time-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        
-        .time-table th, .time-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        
-        .time-table th {
-            background-color: #f0f0f0;
-        }
-        
-        .time-table .high {
-            background-color: #E8F5E9;
-            font-weight: bold;
-        }
-        
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-        
-        .feature-card {
-            width: 48%;
-            margin-bottom: 15px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 12px;
-            box-sizing: border-box;
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            width: 40px;
-            height: 40px;
-            background-color: #E3F2FD;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-            font-size: 20px;
-        }
-        
-        .feature-title {
-            font-weight: bold;
-            margin-bottom: 6px;
-            color: #2196F3;
-        }
-        
-        .compatibility {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-        
-        .compatibility-item {
-            width: 19%;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-        
-        .compatibility-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #E8F5E9;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 8px;
-            font-size: 22px;
-        }
-        
-        .footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 2px solid #f0f0f0;
-            text-align: center;
-            font-size: 0.9em;
-            color: #757575;
-        }
-        
-        .disclaimer {
-            font-size: 0.8em;
-            font-style: italic;
-            margin-top: 15px;
-        }
-        
-        .upgrade-plan {
-            background-color: #E1F5FE;
-            border-radius: 8px;
-            padding: 12px;
-            margin-top: 15px;
-        }
-        
-        .upgrade-title {
-            font-weight: bold;
-            color: #0288D1;
-            margin-bottom: 8px;
-        }
-        
-        .upgrade-items {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .upgrade-item {
-            width: 50%;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .upgrade-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #0288D1;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-        
-        .marriage-module {
-            background-color: #FCE4EC;
-            border-radius: 8px;
-            padding: 12px;
-            margin-top: 15px;
-            position: relative;
-        }
-        
-        .module-status {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #F06292;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-        }
-        
-        .battery-warning {
-            color: #D32F2F;
-            font-weight: bold;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .pulse-effect {
-            animation: pulse 2s infinite;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-image {
-                max-height: 300px;
-            }
-            
-            .feature-card, .upgrade-item {
-                width: 100%;
-            }
-            
-            .compatibility-item {
-                width: 33%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 고정형 네비게이션 바 -->
+    <div class="nav-container">
+        <div class="nav-wrapper">
+            <div class="nav-brand">데미안 2025</div>
+            <button class="mobile-toggle">☰</button>
+            <div class="nav-menu">
+                <a href="#overview" class="nav-item">제품 개요</a>
+                <a href="#specs" class="nav-item">제품 사양</a>
+                <a href="#time" class="nav-item">사용 시간대</a>
+                <a href="#daily" class="nav-item">요일별 가이드</a>
+                <a href="#energy" class="nav-item">에너지 관리</a>
+                <a href="#values" class="nav-item">핵심 가치</a>
+                <a href="#system" class="nav-item">운영 시스템</a>
+                <a href="#features" class="nav-item">고급 기능</a>
+                <a href="#troubleshoot" class="nav-item">문제 해결</a>
+                <a href="#upgrade" class="nav-item">업그레이드 계획</a>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
             <div class="model-badge">2025년형</div>
@@ -344,7 +39,7 @@
             <div class="hero-caption">"배움과 익힘, 가르침이 즐거운 마라토너"</div>
         </div>
         
-        <h2>🚀 제품 개요</h2>
+        <h2 id="overview">🚀 제품 개요</h2>
         <table class="spec-table">
             <tr>
                 <th width="30%">모델명</th>
@@ -364,7 +59,7 @@
             </tr>
         </table>
         
-        <h2>💻 제품 사양</h2>
+        <h2 id="specs">💻 제품 사양</h2>
         <table class="spec-table">
             <tr>
                 <th width="30%">OS</th>
@@ -395,7 +90,7 @@
             </tr>
         </table>
         
-        <h2>⏰ 최적 사용 시간대</h2>
+        <h2 id="time">⏰ 최적 사용 시간대</h2>
         <table class="time-table">
             <tr>
                 <th>시간대</th>
@@ -439,7 +134,7 @@
             ⚠️ 주의: 데미안을 오전에 러닝 모드로 사용할 경우, 다음 모드 전환을 위해 최소 30분의 쿨다운 시간이 필요합니다.
         </div>
         
-        <h2>📅 요일별 활용 가이드</h2>
+        <h2 id="daily">📅 요일별 활용 가이드</h2>
         <div class="features">
             <div class="feature-card">
                 <div class="feature-title">일요일 (24%)</div>
@@ -473,7 +168,7 @@
             </div>
         </div>
         
-        <h2>🔋 에너지 관리 시스템</h2>
+        <h2 id="energy">🔋 에너지 관리 시스템</h2>
         <div class="features">
             <div class="feature-card">
                 <div class="feature-icon">🏃</div>
@@ -501,7 +196,7 @@
             </div>
         </div>
         
-        <h2>💎 핵심 가치 엔진</h2>
+        <h2 id="values">💎 핵심 가치 엔진</h2>
         <div class="features">
             <div class="feature-card">
                 <div class="feature-icon">📚</div>
@@ -530,12 +225,12 @@
             </div>
         </div>
         
-        <h2>🧩 통합 운영 시스템</h2>
+        <h2 id="system">🧩 통합 운영 시스템</h2>
         <p style="text-align: center; font-size: 1.1em; padding: 15px; background-color: #E8F5E9; border-radius: 8px; margin: 10px 0;">
             "배움(Study)과 익힘(Athletics), 가르침(Personal/Heerim)"의 순환적 패턴으로 작동
         </p>
         
-        <h2>🛠️ 고급 기능</h2>
+        <h2 id="features">🛠️ 고급 기능</h2>
         <div class="features">
             <div class="feature-card">
                 <div class="feature-title">AI 기반 러닝 코칭</div>
@@ -555,7 +250,7 @@
             </div>
         </div>
         
-        <h2>❗ 문제 해결 가이드</h2>
+        <h2 id="troubleshoot">❗ 문제 해결 가이드</h2>
         <table class="spec-table">
             <tr>
                 <th width="30%">에러 메시지</th>
@@ -571,7 +266,7 @@
             </tr>
         </table>
         
-        <div class="upgrade-plan">
+        <div id="upgrade" class="upgrade-plan">
             <div class="upgrade-title">🚀 2025 업그레이드 계획</div>
             <div class="upgrade-items">
                 <div class="upgrade-item">
@@ -593,7 +288,7 @@
             </div>
         </div>
         
-        <div class="marriage-module">
+        <div id="marriage" class="marriage-module">
             <div class="module-status">미설치</div>
             <h3>💑 배우자 모듈 (선택 사항)</h3>
             <p>이 선택적 모듈은 현재 설치되지 않았습니다. 설치 여부는 사용자 선택에 따라 결정됩니다.</p>
@@ -601,7 +296,7 @@
             <p><strong>호환성:</strong> 데미안 시스템은 배우자 모듈 없이도 정상적으로 작동하도록 설계되었으며, 모듈 설치는 완전히 선택적입니다.</p>
         </div>
         
-        <h2>🔄 시너지 호환성</h2>
+        <h2 id="synergy">🔄 시너지 호환성</h2>
         <p>데미안 제품은 다음 영역과의 탁월한 시너지를 발휘합니다:</p>
         <div class="compatibility">
             <div class="compatibility-item">
@@ -633,19 +328,6 @@
         </div>
     </div>
     
-    <script>
-        // 배터리 애니메이션
-        setTimeout(function() {
-            document.querySelector('.battery-level').style.width = '4%';
-        }, 500);
-        
-        // 시간대별 하이라이트 효과
-        document.querySelectorAll('.time-table .high').forEach(cell => {
-            cell.style.transition = 'background-color 0.5s';
-            setInterval(() => {
-                cell.style.backgroundColor = cell.style.backgroundColor === 'rgb(232, 245, 233)' ? '#C8E6C9' : '#E8F5E9';
-            }, 2000);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
