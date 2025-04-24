@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데미안 사용설명서 - 펀 에디션</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #f0f0f0;
+            position: relative;
+        }
+        
+        .model-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff5722;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transform: rotate(10deg);
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 250px;
+            background-image: url('/api/placeholder/800/250');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .hero-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            padding: 10px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #2196F3;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            color: #FF5722;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            color: #4CAF50;
+        }
+        
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .spec-table th {
+            background-color: #f0f0f0;
+            text-align: left;
+            padding: 12px;
+        }
+        
+        .spec-table td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .warning {
+            background-color: #FFF3E0;
+            border-left: 4px solid #FF9800;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .battery-indicator {
+            width: 100%;
+            height: 30px;
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            margin: 15px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .battery-level {
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 15px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .battery-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .time-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .time-table th, .time-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .time-table th {
+            background-color: #f0f0f0;
+        }
+        
+        .time-table .high {
+            background-color: #E8F5E9;
+            font-weight: bold;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            width: 48%;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px;
+            box-sizing: border-box;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #E3F2FD;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2196F3;
+        }
+        
+        .compatibility {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .compatibility-item {
+            width: 19%;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .compatibility-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #E8F5E9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 24px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            text-align: center;
+            font-size: 0.9em;
+            color: #757575;
+        }
+        
+        .disclaimer {
+            font-size: 0.8em;
+            font-style: italic;
+            margin-top: 20px;
+        }
+        
+        .upgrade-plan {
+            background-color: #E1F5FE;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .upgrade-title {
+            font-weight: bold;
+            color: #0288D1;
+            margin-bottom: 10px;
+        }
+        
+        .upgrade-items {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .upgrade-item {
+            width: 50%;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .upgrade-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #0288D1;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .marriage-module {
+            background-color: #FCE4EC;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .module-status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #F06292;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        
+        .battery-warning {
+            color: #D32F2F;
+            font-weight: bold;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-effect {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="model-badge">2025년형</div>
+            <h1>데미안 사용설명서</h1>
+            <p>🏃‍♂️ 배움과 익힘, 가르침이 즐거운 마라토너 에디션 🏃‍♂️</p>
+        </div>
+        
+        <div class="hero-image">
+            <div class="hero-caption">"시간과 에너지의 효율을 높이기 위한 도구이자 파트너로서"</div>
+        </div>
+        
+        <h2>🚀 제품 개요</h2>
+        <table class="spec-table">
+            <tr>
+                <th width="30%">모델명</th>
+                <td>임정훈 (Demian)</td>
+            </tr>
+            <tr>
+                <th>출시 연도</th>
+                <td>40대 중반</td>
+            </tr>
+            <tr>
+                <th>제품 구분</th>
+                <td>"배움과 익힘, 가르침이 즐거운 마라토너"</td>
+            </tr>
+            <tr>
+                <th>주요 기능</th>
+                <td>AI & 디지털 & HRD 현업실무자, 러너, 코치, 퍼실리테이터</td>
+            </tr>
+        </table>
+        
+        <h2>💻 제품 사양</h2>
+        <table class="spec-table">
+            <tr>
+                <th width="30%">OS</th>
+                <td>15년 경력의 현직 기업 HRD 담당자</td>
+            </tr>
+            <tr>
+                <th>프로세서</th>
+                <td>희림종합건축사사무소 인사팀 팀장 (교육담당자)</td>
+            </tr>
+            <tr>
+                <th>메모리</th>
+                <td>1,400명 대상 교육체계 수립 및 사람과 기술 연결 교육 디자인</td>
+            </tr>
+            <tr>
+                <th>배터리</th>
+                <td>
+                    마라톤으로 충전, 휴식(Rest Day)으로 최적화
+                    <div class="battery-indicator">
+                        <div class="battery-level" style="width: 4%;"></div>
+                        <div class="battery-text">4% (Rest Day)</div>
+                    </div>
+                    <div class="warning battery-warning">⚠️ 주의: 배터리 부족! 충전(휴식) 시간을 늘리는 것을 권장합니다.</div>
+                </td>
+            </tr>
+            <tr>
+                <th>연결 기능</th>
+                <td>다양한 커뮤니티 퍼실리테이션, 코칭, Guide Run Project</td>
+            </tr>
+        </table>
+        
+        <h2>⏰ 최적 사용 시간대</h2>
+        <table class="time-table">
+            <tr>
+                <th>시간대</th>
+                <th>Personal</th>
+                <th>Study</th>
+                <th>Athletics</th>
+                <th>Exhibition</th>
+                <th>Concert</th>
+                <th>Heerim</th>
+            </tr>
+            <tr>
+                <td>오전 (06-12)</td>
+                <td>15%</td>
+                <td>25%</td>
+                <td class="high">65%</td>
+                <td>10%</td>
+                <td>0%</td>
+                <td>0%</td>
+            </tr>
+            <tr>
+                <td>오후 (12-18)</td>
+                <td>20%</td>
+                <td>15%</td>
+                <td>10%</td>
+                <td class="high">70%</td>
+                <td>20%</td>
+                <td>0%</td>
+            </tr>
+            <tr>
+                <td>저녁 (18-24)</td>
+                <td class="high">65%</td>
+                <td class="high">60%</td>
+                <td>25%</td>
+                <td>20%</td>
+                <td class="high">80%</td>
+                <td class="high">100%</td>
+            </tr>
+        </table>
+        
+        <div class="warning">
+            ⚠️ 주의: 데미안을 오전에 러닝 모드로 사용할 경우, 다음 모드 전환을 위해 최소 30분의 쿨다운 시간이 필요합니다.
+        </div>
+        
+        <h2>📅 요일별 활용 가이드</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-title">일요일 (24%)</div>
+                <p>Athletics 기능 최고조 - 러닝, 마라톤</p>
+                <p><strong>팁:</strong> 이 날 데미안에게 "달리기 좋은 날"이라고 말하면 자동으로 러닝 모드가 활성화됩니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">월요일 (13%)</div>
+                <p>Study, Heerim 모드 활성화</p>
+                <p><strong>팁:</strong> 주간 업무 시작에 최적화된 HRD 고급 기능을 사용할 수 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">목요일 (16%)</div>
+                <p>Personal 모드 집중 - 미팅, 네트워킹</p>
+                <p><strong>팁:</strong> 목요일은 주간 업무 마무리 미팅에 최적화되어 있습니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">금요일 (13%)</div>
+                <p>Concert 모드 - 문화 활동</p>
+                <p><strong>팁:</strong> 이 모드에서는 데미안의 감성 센서가 활성화됩니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">토요일 (16%)</div>
+                <p>Study, Wedding 모드 - 토요심리학회 등</p>
+                <p><strong>팁:</strong> 토요일은 학습 기능이 35% 향상됩니다.</p>
+            </div>
+            <div class="feature-card pulse-effect">
+                <div class="feature-title">화/수요일 (18%)</div>
+                <p>⚠️ 시스템 업데이트 및 재정비 시간</p>
+                <p><strong>개선 제안:</strong> 이 시간대를 더 효율적으로 활용할 수 있는 펌웨어 업데이트가 필요합니다.</p>
+            </div>
+        </div>
+        
+        <h2>🔋 에너지 관리 시스템</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🏃</div>
+                <div class="feature-title">신체적 에너지</div>
+                <p>오전 러닝으로 활성화</p>
+                <p>Athletics 20%의 비중으로 유지</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <div class="feature-title">사회적 에너지</div>
+                <p>오후 시간대 네트워킹으로 충전</p>
+                <p>Personal 32%, Wedding 6%의 비중</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <div class="feature-title">인지적 에너지</div>
+                <p>저녁 시간 학습과 업무로 최적화</p>
+                <p>Study 22%, Heerim 4%의 비중</p>
+            </div>
+            <div class="feature-card pulse-effect">
+                <div class="feature-icon">🔄</div>
+                <div class="feature-title">에너지 재충전</div>
+                <p>Rest Day 4% (불충분)</p>
+                <p class="battery-warning">⚠️ 에너지 재충전 빈도 증가 필요!</p>
+            </div>
+        </div>
+        
+        <h2>💎 핵심 가치 엔진</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <div class="feature-title">지속적 학습</div>
+                <p>월 10회 이상 스터디와 세미나 참여로 구동</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <div class="feature-title">사회적 연결</div>
+                <p>Personal, Wedding, Guide Run 활동으로 유지</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏃</div>
+                <div class="feature-title">신체적 건강</div>
+                <p>Athletics, 마라톤으로 최적화</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <div class="feature-title">전문성 개발</div>
+                <p>Heerim, 교육활동으로 강화</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <div class="feature-title">사회적 기여</div>
+                <p>Guide Run, 가이드런으로 확장</p>
+            </div>
+        </div>
+        
+        <h2>🧩 통합 운영 시스템</h2>
+        <p style="text-align: center; font-size: 1.2em; padding: 20px; background-color: #E8F5E9; border-radius: 8px;">
+            "배움(Study)과 익힘(Athletics), 가르침(Personal/Heerim)"의 순환적 패턴으로 작동
+        </p>
+        
+        <h2>🛠️ 고급 기능</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-title">AI 기반 러닝 코칭</div>
+                <p>운동과 기술의 통합적 접근</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">디지털 시대 인적자원개발</div>
+                <p>현대적 교육 방법론 설계</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">가이드런 프로젝트</div>
+                <p>시각장애인 러닝 지원 프로그램</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">스포츠의학 & HRD 통합</div>
+                <p>신체-인지 역량 개발</p>
+            </div>
+        </div>
+        
+        <h2>❗ 문제 해결 가이드</h2>
+        <table class="spec-table">
+            <tr>
+                <th width="30%">에러 메시지</th>
+                <td>화/수요일 활용도 낮음 → 개선 필요</td>
+            </tr>
+            <tr>
+                <th>시스템 과부하</th>
+                <td>Rest Day 4% 불충분 → 휴식 시간 확보 필요</td>
+            </tr>
+            <tr>
+                <th>성능 최적화</th>
+                <td>월별 활동의 균등한 분배로 안정적 운영 권장</td>
+            </tr>
+        </table>
+        
+        <div class="upgrade-plan">
+            <div class="upgrade-title">🚀 2025 업그레이드 계획</div>
+            <div class="upgrade-items">
+                <div class="upgrade-item">
+                    <div class="upgrade-dot"></div>
+                    <div>신체-인지 역량 통합 프로젝트</div>
+                </div>
+                <div class="upgrade-item">
+                    <div class="upgrade-dot"></div>
+                    <div>스포츠의학 기반 역량 확장</div>
+                </div>
+                <div class="upgrade-item">
+                    <div class="upgrade-dot"></div>
+                    <div>운동 기반 인지 향상 연구</div>
+                </div>
+                <div class="upgrade-item">
+                    <div class="upgrade-dot"></div>
+                    <div>심리신경면역학 기반 회복</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="marriage-module">
+            <div class="module-status">미설치</div>
+            <h3>💑 배우자 모듈 (선택 사항)</h3>
+            <p>이 선택적 모듈은 현재 설치되지 않았습니다. 설치 여부는 사용자 선택에 따라 결정됩니다.</p>
+            <p><strong>주의사항:</strong> 배우자 모듈 설치는 시스템 전반에 광범위한 변화를 가져올 수 있으며, 일부 기존 기능 및 일정에 영향을 미칠 수 있습니다. 설치 전 신중한 고려가 필요합니다.</p>
+            <p><strong>호환성:</strong> 데미안 시스템은 배우자 모듈 없이도 정상적으로 작동하도록 설계되었으며, 모듈 설치는 완전히 선택적입니다.</p>
+        </div>
+        
+        <h2>🔄 시너지 호환성</h2>
+        <p>데미안 제품은 다음 영역과의 탁월한 시너지를 발휘합니다:</p>
+        <div class="compatibility">
+            <div class="compatibility-item">
+                <div class="compatibility-icon">📊</div>
+                <p>HRD & 기업교육</p>
+            </div>
+            <div class="compatibility-item">
+                <div class="compatibility-icon">🏃</div>
+                <p>마라톤 & 러닝</p>
+            </div>
+            <div class="compatibility-item">
+                <div class="compatibility-icon">🤖</div>
+                <p>AI & 디지털</p>
+            </div>
+            <div class="compatibility-item">
+                <div class="compatibility-icon">🗣️</div>
+                <p>코칭 & 퍼실리테이션</p>
+            </div>
+            <div class="compatibility-item">
+                <div class="compatibility-icon">📚</div>
+                <p>학습 & 세미나</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>본 사용설명서는 Claude에서 연결된 2024년도 구글 캘린더, 자저전, AI 프로필을 바탕으로 작성되었습니다.</p>
+            <p class="disclaimer">모든 활동이 기록되지 않았으므로 실제 성능은 더 우수할 수 있습니다.</p>
+            <p>© 2025 데미안 에디션 - 모든 배움과 익힘, 가르침이 즐겁게</p>
+        </div>
+    </div>
+    
+    <script>
+        // 배터리 애니메이션
+        setTimeout(function() {
+            document.querySelector('.battery-level').style.width = '4%';
+        }, 500);
+        
+        // 시간대별 하이라이트 효과
+        document.querySelectorAll('.time-table .high').forEach(cell => {
+            cell.style.transition = 'background-color 0.5s';
+            setInterval(() => {
+                cell.style.backgroundColor = cell.style.backgroundColor === 'rgb(232, 245, 233)' ? '#C8E6C9' : '#E8F5E9';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
