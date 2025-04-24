@@ -1274,12 +1274,16 @@ h3 {
         display: flex;
     }
     
-    .nav-item {
-        margin: 0;
-        padding: 15px 22px;
-        border-bottom: 1px solid var(--apple-gray);
-        width: 100%;
-    }
+.nav-item {
+    margin: 0 12px;
+    text-decoration: none;
+    color: var(--apple-light-gray);
+    font-size: 14px;
+    font-weight: 400;
+    transition: color var(--transition-fast);
+    position: relative;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
     
     .nav-item.active::after {
         display: none;
