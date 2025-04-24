@@ -13,6 +13,7 @@
             padding: 0;
             background-color: #f8f9fa;
             color: #333;
+            line-height: 1.4;
         }
         
         .container {
@@ -26,7 +27,7 @@
         
         .header {
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
             border-bottom: 2px solid #f0f0f0;
             position: relative;
         }
@@ -43,15 +44,20 @@
             transform: rotate(10deg);
         }
         
+        .hero-image-container {
+            width: 100%;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
         .hero-image {
             width: 100%;
-            height: 250px;
-            background-image: url('/api/placeholder/800/250');
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            margin: 20px 0;
-            position: relative;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
         }
         
         .hero-caption {
@@ -61,62 +67,65 @@
             right: 0;
             background-color: rgba(0,0,0,0.6);
             color: white;
-            padding: 10px;
+            padding: 8px;
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
             text-align: center;
         }
         
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.2em;
+            margin-bottom: 8px;
             color: #2196F3;
         }
         
         h2 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: #FF5722;
             border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-top: 40px;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
         
         h3 {
-            font-size: 1.3em;
+            font-size: 1.2em;
             color: #4CAF50;
+            margin-top: 15px;
+            margin-bottom: 10px;
         }
         
         .spec-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 15px 0;
         }
         
         .spec-table th {
             background-color: #f0f0f0;
             text-align: left;
-            padding: 12px;
+            padding: 10px;
         }
         
         .spec-table td {
-            padding: 12px;
+            padding: 10px;
             border-bottom: 1px solid #f0f0f0;
         }
         
         .warning {
             background-color: #FFF3E0;
             border-left: 4px solid #FF9800;
-            padding: 10px 15px;
-            margin: 15px 0;
+            padding: 8px 12px;
+            margin: 12px 0;
             border-radius: 4px;
         }
         
         .battery-indicator {
             width: 100%;
-            height: 30px;
+            height: 25px;
             background-color: #f0f0f0;
             border-radius: 15px;
-            margin: 15px 0;
+            margin: 12px 0;
             overflow: hidden;
             position: relative;
         }
@@ -141,12 +150,12 @@
         .time-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 15px 0;
         }
         
         .time-table th, .time-table td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
         }
         
@@ -163,16 +172,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         
         .feature-card {
             width: 48%;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 15px;
+            padding: 12px;
             box-sizing: border-box;
             transition: transform 0.3s;
         }
@@ -183,20 +192,20 @@
         }
         
         .feature-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background-color: #E3F2FD;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
-            font-size: 24px;
+            margin-bottom: 8px;
+            font-size: 20px;
         }
         
         .feature-title {
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #2196F3;
         }
         
@@ -204,30 +213,30 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         
         .compatibility-item {
             width: 19%;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .compatibility-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background-color: #E8F5E9;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 10px;
-            font-size: 24px;
+            margin: 0 auto 8px;
+            font-size: 22px;
         }
         
         .footer {
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 30px;
+            padding-top: 15px;
             border-top: 2px solid #f0f0f0;
             text-align: center;
             font-size: 0.9em;
@@ -237,20 +246,20 @@
         .disclaimer {
             font-size: 0.8em;
             font-style: italic;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         
         .upgrade-plan {
             background-color: #E1F5FE;
             border-radius: 8px;
-            padding: 15px;
-            margin-top: 20px;
+            padding: 12px;
+            margin-top: 15px;
         }
         
         .upgrade-title {
             font-weight: bold;
             color: #0288D1;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .upgrade-items {
@@ -260,24 +269,24 @@
         
         .upgrade-item {
             width: 50%;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
         }
         
         .upgrade-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background-color: #0288D1;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-right: 8px;
         }
         
         .marriage-module {
             background-color: #FCE4EC;
             border-radius: 8px;
-            padding: 15px;
-            margin-top: 20px;
+            padding: 12px;
+            margin-top: 15px;
             position: relative;
         }
         
@@ -306,6 +315,20 @@
         .pulse-effect {
             animation: pulse 2s infinite;
         }
+        
+        @media (max-width: 768px) {
+            .hero-image {
+                max-height: 300px;
+            }
+            
+            .feature-card, .upgrade-item {
+                width: 100%;
+            }
+            
+            .compatibility-item {
+                width: 33%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -316,8 +339,9 @@
             <p>🏃‍♂️ 배움과 익힘, 가르침이 즐거운 마라토너 에디션 🏃‍♂️</p>
         </div>
         
-        <div class="hero-image">
-            <div class="hero-caption">"시간과 에너지의 효율을 높이기 위한 도구이자 파트너로서"</div>
+        <div class="hero-image-container">
+            <img src="demian-photos.jpg" alt="데미안의 다양한 모습" class="hero-image">
+            <div class="hero-caption">"배움과 익힘, 가르침이 즐거운 마라토너"</div>
         </div>
         
         <h2>🚀 제품 개요</h2>
@@ -383,7 +407,7 @@
                 <th>Heerim</th>
             </tr>
             <tr>
-                <td>오전 (06-12)</td>
+                <td>오전(06-12)</td>
                 <td>15%</td>
                 <td>25%</td>
                 <td class="high">65%</td>
@@ -392,7 +416,7 @@
                 <td>0%</td>
             </tr>
             <tr>
-                <td>오후 (12-18)</td>
+                <td>오후(12-18)</td>
                 <td>20%</td>
                 <td>15%</td>
                 <td>10%</td>
@@ -401,7 +425,7 @@
                 <td>0%</td>
             </tr>
             <tr>
-                <td>저녁 (18-24)</td>
+                <td>저녁(18-24)</td>
                 <td class="high">65%</td>
                 <td class="high">60%</td>
                 <td>25%</td>
@@ -420,7 +444,7 @@
             <div class="feature-card">
                 <div class="feature-title">일요일 (24%)</div>
                 <p>Athletics 기능 최고조 - 러닝, 마라톤</p>
-                <p><strong>팁:</strong> 이 날 데미안에게 "달리기 좋은 날"이라고 말하면 자동으로 러닝 모드가 활성화됩니다.</p>
+                <p><strong>팁:</strong> 이 날 "달리기 좋은 날"이라고 말하면 자동으로 러닝 모드가 활성화됩니다.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-title">월요일 (13%)</div>
@@ -435,7 +459,7 @@
             <div class="feature-card">
                 <div class="feature-title">금요일 (13%)</div>
                 <p>Concert 모드 - 문화 활동</p>
-                <p><strong>팁:</strong> 이 모드에서는 데미안의 감성 센서가 활성화됩니다.</p>
+                <p><strong>팁:</strong> 이 모드에서는 감성 센서가 활성화됩니다.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-title">토요일 (16%)</div>
@@ -507,7 +531,7 @@
         </div>
         
         <h2>🧩 통합 운영 시스템</h2>
-        <p style="text-align: center; font-size: 1.2em; padding: 20px; background-color: #E8F5E9; border-radius: 8px;">
+        <p style="text-align: center; font-size: 1.1em; padding: 15px; background-color: #E8F5E9; border-radius: 8px; margin: 10px 0;">
             "배움(Study)과 익힘(Athletics), 가르침(Personal/Heerim)"의 순환적 패턴으로 작동
         </p>
         
@@ -573,7 +597,7 @@
             <div class="module-status">미설치</div>
             <h3>💑 배우자 모듈 (선택 사항)</h3>
             <p>이 선택적 모듈은 현재 설치되지 않았습니다. 설치 여부는 사용자 선택에 따라 결정됩니다.</p>
-            <p><strong>주의사항:</strong> 배우자 모듈 설치는 시스템 전반에 광범위한 변화를 가져올 수 있으며, 일부 기존 기능 및 일정에 영향을 미칠 수 있습니다. 설치 전 신중한 고려가 필요합니다.</p>
+            <p><strong>주의사항:</strong> 배우자 모듈 설치는 시스템 전반에 광범위한 변화를 가져올 수 있으며, 일부 기존 기능 및 일정에 영향을 미칠 수 있습니다.</p>
             <p><strong>호환성:</strong> 데미안 시스템은 배우자 모듈 없이도 정상적으로 작동하도록 설계되었으며, 모듈 설치는 완전히 선택적입니다.</p>
         </div>
         
