@@ -147,6 +147,7 @@ button {
     font-weight: 400;
     transition: color var(--transition-fast);
     position: relative;
+    white-space: nowrap; /* 이 줄 추가 */
 }
 
 .nav-item:hover, .nav-item.active {
