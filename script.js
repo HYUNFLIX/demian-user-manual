@@ -9,36 +9,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // 스크롤시 네비게이션 바 스타일 변경
-    function updateNavbar() {
-        const navbar = document.querySelector('.nav-container');
-        if (window.scrollY > 20) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-    
     // 네비게이션 바 현재 섹션 하이라이트
     const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('h2[id]');
     
     function setActiveNavItem() {
         let currentSection = '';
-        let scrollPosition = window.scrollY + 100;
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            if (window.scrollY >= sectionTop - 100) {
                 currentSection = section.getAttribute('id');
             }
         });
         
         navItems.forEach(item => {
             item.classList.remove('active');
-            if (currentSection && item.getAttribute('href') === `#${currentSection}`) {
+            if (item.getAttribute('href') === `#${currentSection}`) {
                 item.classList.add('active');
             }
         });
@@ -46,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 스크롤 이벤트 연결
     window.addEventListener('scroll', function() {
-        updateNavbar();
         setActiveNavItem();
         
         // 스크롤 위로 버튼 표시/숨김
@@ -60,10 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // 초기 상태 설정
-    updateNavbar();
-    setActiveNavItem();
-    
     // 네비게이션 바 링크 클릭시 스무스 스크롤
     navItems.forEach(item => {
         item.addEventListener('click', function(e) {
@@ -74,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 70,
+                    top: targetElement.offsetTop - 60,
                     behavior: 'smooth'
                 });
                 
@@ -94,10 +78,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 500);
     
+    // 시간대별 하이라이트 효과
+    const highCells = document.querySelectorAll('.time-table .high');
+    highCells.forEach(cell => {
+        cell.style.transition = 'background-color 0.5s';
+        setInterval(() => {
+            cell.style.backgroundColor = cell.style.backgroundColor === 'rgb(232, 245, 233)' ? '#C8E6C9' : '#E8F5E9';
+        }, 2000);
+    });
+    
     // 스크롤 위로 버튼 
     const scrollTopButton = document.createElement('div');
     scrollTopButton.className = 'scroll-top';
-    scrollTopButton.innerHTML = '↑';
+    scrollTopButton.innerHTML = '&uarr;';
     document.body.appendChild(scrollTopButton);
     
     scrollTopButton.addEventListener('click', function() {
@@ -106,21 +99,4 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
-    
-    // 페이지 로드 애니메이션
-    const animateElements = document.querySelectorAll('.animate-on-scroll');
-    
-    function checkIfInView() {
-        animateElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('visible');
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', checkIfInView);
-    checkIfInView();
 });
