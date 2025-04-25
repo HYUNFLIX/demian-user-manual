@@ -989,14 +989,25 @@ h3 {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background-color: white;
+    background-color: var(--apple-gray);
     border-radius: 50%;
-    transition: transform var(--transition-fast);
-    font-size: 20px;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
 }
 
 .social-links a:hover {
     transform: translateY(-3px);
+    background-color: var(--apple-light-blue);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--apple-dark);
+    transition: fill var(--transition-fast);
+}
+
+.social-links a:hover .social-icon {
+    fill: var(--apple-blue);
 }
 
 .footer-bottom {
